@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REQUIEM | Official Site</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- ✅ Particles only in top-right corner -->
+  <canvas id="heroParticles"></canvas>
+
+  <!-- ✅ PROFILE MENU - Improved, No Dots -->
+  <div class="profile-menu" id="profileMenu">
+    <button class="profile-btn" id="profileBtn" aria-label="Profile menu">
+      <img src="../../assets/profile-logo.png" class="profile-img" alt="Profile">
+    </button>
+
+    <div class="profile-dropdown" id="profileDropdown">
+      <a href="auth.html?mode=signup" id="signupLink">SIGN UP</a>
+      <a href="auth.html?mode=login" id="loginLink">LOGIN</a>
+    </div>
+  </div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu">
+    <ul>
+      <li class="active" id="nav-home" onclick="scrollToSection('home')">Home</li>
+      <li id="nav-trailer" onclick="scrollToSection('trailer-section')">Trailer</li>
+
+      <li class="locked-link" id="nav-production" onclick="scrollToSection('production-notes')">Production Notes</li>
+      <li class="locked-link" id="nav-bts" onclick="scrollToSection('behind-the-scenes')">Behind The Scenes</li>
+
+      <li id="nav-studio" onclick="scrollToSection('studio')">Studio</li>
+
+      <li class="btn-ticket" id="navTickets">Pre-Ticket</li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero-section">
+    <video id="bg-video-home" autoplay muted loop playsinline>
+      <source src="../../assets/Starship js project.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay-home">
+      <main class="hero-main">
+        <h1 class="main-title">REQUIEM</h1>
+        <h2 class="sub-title">OF THE COSMOS</h2>
+        <p class="coming-tag">COMING 2026</p>
+
+        <button class="explore-btn" id="btnTickets">
+          GET TICKETS →
+        </button>
+      </main>
+
+      <footer class="hero-footer">
+        <div class="producer-credit">
+          <span>PRODUCED BY : ILYASS EL FADILI</span>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ilyass-el-fadili/" target="_blank">LINKEDIN</a>
+          <a href="https://github.com/ELFADILI-Ilyass" target="_blank">GITHUB</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- TRAILER -->
+  <section id="trailer-section" class="content-section section-block">
+    <h3 class="ghost-header">Trailer</h3>
+
+    <div class="trailer-wrapper">
+      <div class="video-container">
+        <video id="unreal-trailer" controls>
+          <source src="../../assets/unreal engine project.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="trailer-meta">
+        <h4>PROJECT : Starship</h4>
+        <p>Rendered in Real-Time | Extended Cinematic | Made with Unreal Engine 5</p>
+      </div>
+
+      <div class="studio-branding">
+        <img src="../../assets/IlyassStudioLogo.png" alt="Ilyass Studio" class="studio-logo">
+        <div class="maker-tag">
+          <span class="label">PRODUCED BY</span>
+          <span class="name">Ilyass EL FADILI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       PRODUCTION NOTES (locked)
+       ✅ FIX: make it a full section block (independent in view)
+       ========================= -->
+  <section id="production-notes" class="content-section section-block">
+    <h3 class="ghost-header">Production Notes</h3>
+
+    <div class="section-inner">
+      <h2 class="section-title">Tools Used</h2>
+
+      <!-- IMPORTANT: home.js needs this container -->
+      <div id="productionNotesContainer">
+        <!-- LOCKED OVERLAY (visible only if NOT logged in) -->
+        <div class="locked-overlay">
+          <div class="locked-card">
+            <div class="lock-icon">🔒</div>
+            <h3>RESTRICTED SECTION</h3>
+            <p>
+              Production notes, technical breakdowns, and development insights.<br/>
+              Available after login. This is a student MVP (in progress).
+            </p>
+
+            <div class="locked-actions">
+              <button id="btnLoginFromNotes" class="btn-outline">LOGIN TO ACCESS</button>
+              <button id="btnSignupFromNotes" class="btn-outline">SIGN UP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       BEHIND THE SCENES (locked)
+       ✅ FIX: make it a full section block (independent in view)
+       ========================= -->
+  <section id="behind-the-scenes" class="content-section section-block">
+    <h3 class="ghost-header">Behind The Scenes</h3>
+
+    <div class="section-inner">
+      <!-- <h2 class="section-title">BEHIND THE SCENES</h2> -->
+
+      <!-- IMPORTANT: home.js needs this container -->
+      <div id="behindScenesContainer">
+        <!-- LOCKED OVERLAY (visible only if NOT logged in) -->
+        <div class="locked-overlay">
+          <div class="locked-card">
+            <div class="lock-icon">🔒</div>
+            <h3>RESTRICTED SECTION</h3>
+            <p>
+              Workflow snapshots, planning notes, and “how it was built”.<br/>
+              Available after login.
+            </p>
+
+            <div class="locked-actions">
+              <button id="btnLoginFromBts" class="btn-outline">LOGIN TO ACCESS</button>
+              <button id="btnSignupFromBts" class="btn-outline">SIGN UP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section id="studio" class="content-section section-block studio-section">
+    <h3 class="ghost-header">Studio</h3>
+
+    <div class="studio-shell">
+      <div class="studio-mark">
+        <img src="../../assets/IlyassStudioLogo.png" alt="Ilyass Studio" class="studio-mark-logo">
+        <p class="studio-mark-sub">INDEPENDENT CGI • STUDENT PRODUCTION</p>
+      </div>
+
+      <div class="studio-info">
+        <p class="studio-kicker">PRODUCED BY</p>
+        <h2 class="studio-title">ILYASS STUDIO</h2>
+
+        <p class="studio-desc">
+          A personal CGI production brand. Current project: <strong>Requiem of the Cosmos</strong> (in progress).
+          This website is a student MVP — a prototype to showcase the film and share updates. More projects and content coming soon.
+        </p>
+
+        <div class="studio-meta">
+          <div class="meta-item">
+            <span class="meta-label">STATUS</span>
+            <span class="meta-value">IN PROGRESS</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">RELEASE</span>
+            <span class="meta-value">2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">ENGINE</span>
+            <span class="meta-value">UE5</span>
+          </div>
+        </div>
+
+        <div class="studio-projects">
+          <p class="projects-title">FEATURED PROJECTS</p>
+
+          <div class="project-row">
+            <span class="project-dot"></span>
+            <div class="project-text">
+              <p class="project-name">Requiem of the Cosmos</p>
+              <p class="project-sub">CGI film • official site prototype • student MVP</p>
+            </div>
+          </div>
+
+          <div class="project-row">
+            <span class="project-dot"></span>
+            <div class="project-text">
+              <p class="project-name">Cinematic Experiments</p>
+              <p class="project-sub">Short tests • lighting • compositing • WIP</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="studio-actions">
+          <a class="studio-btn" href="https://youtu.be/RRvFxSuP-G4?si=9BQJQvSNKGWOFDVm">OFFICIAL TRAILER</a>
+          <button class="studio-btn ghost" id="contactBtn">CONTACT=></button>
+
+          <div class="studio-icons">
+            <a class="icon-btn" href="https://www.linkedin.com/in/ilyass-el-fadili/" target="_blank" aria-label="LinkedIn">
+              <img src="../../assets/linkedin.png" alt="LinkedIn" class="icon-img">
+            </a>
+
+            <a class="icon-btn" href="https://github.com/ELFADILI-Ilyass" target="_blank" aria-label="GitHub">
+              <img src="../../assets/Github.png" alt="GitHub" class="icon-img">
+            </a>
+          </div>
+        </div>
+
+        <!-- <div id="pressKitPanel" class="studio-panel">
+          <p class="panel-title">OFFICIAL TRAILER</p>
+          
+        </div> -->
+
+        <div id="contactPanel" class="studio-panel">
+          <p class="panel-title">CONTACT</p>
+          <p class="panel-text">
+            for more contact : elfadili04ilyass@gmail.com
+          </p>
+          <button class="panel-close" id="closePanels2">CLOSE</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span class="footer-brand">ILYASS STUDIO</span>
+      <span class="footer-sep">•</span>
+      <a href="#" class="footer-link">Terms</a>
+      <span class="footer-sep">•</span>
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <span class="footer-sep">•</span>
+      <a href="#" class="footer-link">Cookie Policy</a>
+    </div>
+
+    <div class="footer-right">
+      <span class="footer-note">Student MVP (in progress).</span>
+      <span class="footer-copy">© ILYASS STUDIO</span>
+    </div>
+  </footer>
+
+  <script type="module" src="../Controller/home.js"></script>
+  <script type="module" src="../Controller/particles.js"></script>
+
+</body>
+</html>

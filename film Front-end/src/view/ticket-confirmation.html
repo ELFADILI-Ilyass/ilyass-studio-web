@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Ticket Confirmation — Requiem</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/ticket-confirmation.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
+
+  <main class="confirm-page">
+    <header class="brand">
+      <div class="brand-title">REQUIEM</div>
+      <div class="brand-sub">OF THE COSMOS</div>
+      <div class="brand-tag">PRE-TICKET CONFIRMATION</div>
+    </header>
+
+    <section class="panel">
+      <h2 class="panel-title">RESERVATION CONFIRMED ✅</h2>
+      <p class="panel-desc">
+        This is a <strong>Pre-Ticket</strong>. You’ll be notified when the official release date is confirmed.
+        <br/>
+        
+      </p>
+
+      <div class="ticket-card" id="printArea">
+        <div class="ticket-top">
+          <div>
+            <div class="t-title">PRE-TICKET</div>
+            <div class="t-sub">One-time use only</div>
+          </div>
+          <div class="t-code" id="ticketCode">ROC-000000</div>
+        </div>
+
+        <div class="ticket-grid">
+          <div class="t-field">
+            <div class="t-label">EMAIL</div>
+            <div class="t-value" id="tEmail">—</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">COUNTRY</div>
+            <div class="t-value" id="tCountry">—</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">CINEMA</div>
+            <div class="t-value" id="tCinema">—</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">SHOW DATE</div>
+            <div class="t-value" id="tDate">—</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">SHOW TIME</div>
+            <div class="t-value" id="tTime">—</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">TICKETS</div>
+            <div class="t-value" id="tQty">—</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">TOTAL</div>
+            <div class="t-value" id="tTotal">$0.00</div>
+          </div>
+
+          <div class="t-field">
+            <div class="t-label">CREATED</div>
+            <div class="t-value" id="tCreated">—</div>
+          </div>
+        </div>
+
+        <div class="ticket-footer">
+          <div class="mini-note">
+            • NOTE: This ticket is a reservation and does not guarantee entry. You will be notified of the official release date via email. Please keep this ticket for your records.
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-outline" id="printBtn">PRINT</button>
+        <a class="btn-outline" href="home.html">BACK HOME</a>
+        <a class="btn-outline" href="tickets.html">BOOK AGAIN</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../Controller/ticket-confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+  --white: #fff;
+  --glass: rgba(0,0,0,0.55);
+  --stroke: rgba(255,255,255,0.14);
+  --stroke2: rgba(120,190,255,0.45);
+  --muted: rgba(255,255,255,0.65);
+}
+
+body{
+  min-height: 100vh;
+  font-family: "Special Elite", serif;
+  color: var(--white);
+  background: #000;
+  overflow: hidden;
+}
+
+.bg{
+  position: fixed;
+  inset: 0;
+  background-image: url("../../assets/filmBackground.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.32) contrast(1.05);
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+.vignette{
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.92) 70%);
+  z-index: 1;
+}
+
+.auth-page{
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 50px 16px;
+  gap: 16px;
+}
+
+.brand{
+  text-align: center;
+  user-select: none;
+}
+
+.brand-title{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.8rem;
+  letter-spacing: 2px;
+  line-height: 0.9;
+}
+
+.brand-sub{
+  margin-top: 6px;
+  letter-spacing: 10px;
+  opacity: 0.75;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.brand-tag{
+  margin-top: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.panel{
+  width: min(760px, 95%);
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 0 55px rgba(0,0,0,0.95);
+  padding: 18px;
+  position: relative;
+}
+
+.panel::before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid rgba(120,190,255,0.18);
+  pointer-events: none;
+}
+
+.panel-top{
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tab{
+  flex: 1;
+  padding: 12px 10px;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--stroke);
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.tab:hover{
+  opacity: 1;
+  border-color: rgba(255,255,255,0.25);
+}
+
+.tab.active{
+  opacity: 1;
+  border-color: var(--stroke2);
+  box-shadow: 0 0 16px rgba(120,190,255,0.14);
+}
+
+.form{
+  display: none;
+  gap: 12px;
+}
+
+.form.active{
+  display: grid;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 12px;
+}
+
+.field label{
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.field input{
+  width: 100%;
+  padding: 12px 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--stroke);
+  color: var(--white);
+  outline: none;
+  font-family: "Special Elite", serif;
+  transition: 0.2s ease;
+}
+
+.field input:focus{
+  border-color: rgba(120,190,255,0.6);
+  box-shadow: 0 0 14px rgba(120,190,255,0.12);
+}
+
+.primary-btn{
+  margin-top: 4px;
+  padding: 14px 12px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-family: "Special Elite", serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.primary-btn:hover{
+  transform: translateY(-2px);
+}
+
+.note{
+  margin-top: 8px;
+  opacity: 0.65;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.panel-bottom{
+  margin-top: 12px;
+}
+
+.back-link{
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.65;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.back-link:hover{
+  opacity: 1;
+}
+
+@media (max-width: 720px){
+  .brand-title{ font-size: 3.1rem; }
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
+.pass-row{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pass-row input{
+  flex: 1;
+}
+
+.ghost-btn{
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid var(--stroke);
+  color: var(--white);
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Special Elite", serif;
+  opacity: 0.85;
+  transition: 0.2s ease;
+  min-width: 88px;
+}
+
+.ghost-btn:hover{
+  opacity: 1;
+  border-color: rgba(255,255,255,0.25);
+}
+
+/* --- COUNTRY SELECT STYLING --- */
+
+.field select {
+  width: 100%;
+  padding: 12px 12px;
+  background: rgba(255, 255, 255, 0.06); /* Same as input */
+  border: 1px solid var(--stroke);
+  color: var(--white);
+  outline: none;
+  font-family: "Special Elite", serif;
+  transition: 0.2s ease;
+  cursor: pointer;
+  appearance: none; /* Removes default browser arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) center; /* Places custom arrow */
+}
+
+.field select:focus {
+  border-color: rgba(120, 190, 255, 0.6);
+  box-shadow: 0 0 14px rgba(120, 190, 255, 0.12);
+}
+
+/* Style the dropdown list items (the options) */
+.field select option {
+  background-color: #1a1a1a; /* Dark background for the list */
+  color: var(--white);
+  padding: 10px;
+}
+
+/* Makes sure the dropdown doesn't look weird on mobile */
+@media (max-width: 720px) {
+  .field select {
+    background-position: calc(100% - 12px) center;
+  }
+}

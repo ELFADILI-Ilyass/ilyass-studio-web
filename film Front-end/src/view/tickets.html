@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Pre-Ticket — Requiem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tickets.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
+
+  <main class="tickets-page">
+    <header class="brand">
+      <div class="brand-title">REQUIEM</div>
+      <div class="brand-sub">OF THE COSMOS</div>
+      <div class="brand-tag">PRE-TICKET BOOKING</div>
+    </header>
+
+    <section class="panel">
+      <div class="tickets-layout">
+        <aside class="poster-card">
+          <img class="poster-img" src="../../assets/Poster.jpeg" alt="Poster" />
+          <div class="poster-caption">
+            <div class="cap-title">OFFICIAL KEY VISUAL</div>
+            <div class="cap-sub">Written & Directed by Ilyass EL FADILI</div>
+            <div class="cap-note">Student MVP (in progress)</div>
+          </div>
+        </aside>
+
+        <div class="form-card">
+          <h2 class="panel-title">BOOK YOUR TICKET</h2>
+          <p class="panel-desc">
+            Select your cinema and preferred showtime. Your country is auto-filled (but you can change it).
+          </p>
+
+          <!-- Hype / info -->
+          <div class="preticket-info">
+            <div class="preticket-badge">PRE-TICKET</div>
+            <p class="preticket-text">
+              You’re reserving early access. The official release date will be announced soon.
+              You’ll be notified via email when tickets become active.
+            </p>
+          </div>
+
+          <form id="ticketForm" class="form">
+            <!-- Country -->
+            <div class="field">
+              <label for="countrySelect">YOUR COUNTRY</label>
+              <select id="countrySelect" required>
+                <option value="">Choose country...</option>
+              </select>
+              <div class="field-note">✓ Default from your profile (editable)</div>
+            </div>
+
+            <!-- Cinema -->
+            <div class="field">
+              <label for="cinema">SELECT CINEMA</label>
+              <select id="cinema" required>
+                <option value="">Choose cinema...</option>
+              </select>
+            </div>
+
+            <!-- Date / Time -->
+            <div class="grid-2">
+              <div class="field">
+                <label for="showDate">SHOW DATE</label>
+                <input id="showDate" type="date" required />
+                <div class="field-note" id="dateHint">Choose a date within the allowed window.</div>
+              </div>
+              <div class="field">
+                <label for="showTime">SHOW TIME</label>
+                <select id="showTime" required>
+                  <option value="">Select time</option>
+                  <option value="14:00">14:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="20:00">20:00</option>
+                  <option value="22:30">22:30</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Tickets count -->
+            <div class="field">
+              <label for="ticketCount">NUMBER OF TICKETS</label>
+              <select id="ticketCount" required>
+                <option value="1">1 Ticket</option>
+                <option value="2">2 Tickets</option>
+                <option value="3">3 Tickets</option>
+                <option value="4">4 Tickets</option>
+                <option value="5">5 Tickets</option>
+              </select>
+            </div>
+
+            <!-- ✅ Pre-ticket agreement -->
+            <div class="agree-box">
+              <label class="agree-label">
+                <input type="checkbox" id="agreePreTicket" />
+                <span>
+                  I understand that this is a <strong>Pre-Ticket</strong>. I will be notified of the official release date via email.
+                  This ticket is valid for <strong>one-time use only</strong>.
+                </span>
+              </label>
+            </div>
+
+            <!-- Price -->
+            <div class="price-box disabled" id="priceBox">
+              <span class="price-label">TOTAL PRICE:</span>
+              <span class="price-value" id="totalPrice">$15.00</span>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-submit" id="btnSubmitTicket" disabled>
+              RESERVE TICKET
+            </button>
+
+            <div class="note">
+              Demo booking system. In production, this would connect to payments.
+            </div>
+          </form>
+
+          <a href="home.html" class="back-link">← Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../Controller/tickets.js"></script>
+</body>
+</html>

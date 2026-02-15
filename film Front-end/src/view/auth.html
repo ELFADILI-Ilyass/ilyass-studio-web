@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REQUIEM | Access</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
+
+  <div class="auth-page">
+    <header class="brand">
+      <h1 class="brand-title">REQUIEM</h1>
+      <p class="brand-sub">OF THE COSMOS</p>
+      <p class="brand-tag">OFFICIAL ACCESS • STUDENT MVP (IN PROGRESS)</p>
+    </header>
+
+    <section class="panel">
+      <div class="panel-top">
+        <button id="tabSignup" class="tab">Sign up</button>
+        <button id="tabLogin" class="tab">Login</button>
+      </div>
+
+      <!-- SIGNUP -->
+      <form id="signupForm" class="form" autocomplete="off">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="signupEmail" required placeholder="your@email.com" autocomplete="email"/>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label>Date of birth</label>
+            <input type="date" id="signupDob" required autocomplete="bday" />
+          </div>
+
+          <div class="field">
+            <label>Country</label>
+            <select id="signupCountry" required>
+              <option value="" disabled selected>Choose country...</option>
+              <option value="Morocco">Morocco</option>
+              <option value="France">France</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <option value="China">China</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <div class="pass-row">
+            <input type="password" id="signupPassword" required placeholder="••••••••" autocomplete="new-password"/>
+            <button type="button" id="toggleSignupPass" class="ghost-btn">Show</button>
+          </div>
+        </div>
+
+        <button class="primary-btn" type="submit">Create account</button>
+        <p id="signupMessage" class="note" style="display:none;"></p>
+      </form>
+
+      <!-- LOGIN -->
+      <form id="loginForm" class="form" autocomplete="off">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="loginEmail" required placeholder="your@email.com" autocomplete="email"/>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <div class="pass-row">
+            <input type="password" id="loginPassword" required placeholder="••••••••" autocomplete="current-password"/>
+            <button type="button" id="toggleLoginPass" class="ghost-btn">Show</button>
+          </div>
+        </div>
+
+        <button class="primary-btn" type="submit">Login</button>
+        <p id="loginMessage" class="note" style="display:none;"></p>
+      </form>
+
+      <div class="panel-bottom">
+        <a class="back-link" href="home.html">← Back to home</a>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="../Controller/auth.js"></script>
+</body>
+</html>

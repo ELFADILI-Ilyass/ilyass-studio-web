@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Check | REQUIEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/age-gate.css">
+</head>
+<body>
+
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="../../assets/age-gate.mp4" type="video/mp4">
+    </video>
+
+    <div class="age-container">
+        <header>
+            <h1 class="main-title">REQUIEM</h1>
+            <h2 class="sub-title">OF THE COSMOS</h2>
+        </header>
+
+        <p class="prompt">DATE OF BIRTH</p>
+
+        <div class="date-fields">
+            <div class="input-item">
+                <input type="number" id="day" placeholder="DD" maxlength="2" min="1" max="31">
+                <label>Day</label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="input-item">
+                <input type="number" id="month" placeholder="MM" maxlength="2" min="1" max="12">
+                <label>Month</label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="input-item">
+                <input type="number" id="year" placeholder="YYYY" maxlength="4" min="1900">
+                <label>Year</label>
+            </div>
+        </div>
+
+
+        <button id="confirm-btn">CONFIRM</button>
+
+        <!-- Bottom right availability message -->
+    <div style="
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      font-family: 'Special Elite', monospace;
+      color: rgba(255,255,255,0.75);
+      font-size: 12px;
+      letter-spacing: 1px;
+      ">
+      AVAILABLE ONLY IN MOROCCO, FRANCE, USA, UK, CHINA (for now)
+    </div>
+    </div>
+
+    <footer class="branding-footer">
+        <div class="logo-wrap">
+            <img src="../../assets/IlyassStudioLogo.png" alt="Ilyass Studio">
+        </div>
+        <div class="creator-credit">
+            <span class="label">PRODUCED BY</span>
+            <span class="name">ILYASS EL FADILI</span>
+        </div>
+    </footer>
+
+    <script type="module" src="../Controller/age-gate.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

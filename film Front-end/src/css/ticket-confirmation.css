@@ -1,0 +1,210 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+  --white:#fff;
+  --glass: rgba(0,0,0,0.60);
+  --stroke: rgba(255,255,255,0.14);
+  --stroke2: rgba(120,190,255,0.45);
+  --muted: rgba(255,255,255,0.70);
+}
+
+body{
+  min-height: 100vh;
+  font-family: "Special Elite", serif;
+  color: var(--white);
+  background: #000;
+}
+
+.bg{
+  position: fixed;
+  inset: 0;
+  background-image: url("../../assets/filmBackground.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.30) contrast(1.05);
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+.vignette{
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.92) 70%);
+  z-index: 1;
+}
+
+.confirm-page{
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: 50px 16px;
+  gap: 16px;
+}
+
+.brand{
+  text-align: center;
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.brand-title{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  line-height: 0.9;
+}
+
+.brand-sub{
+  margin-top: 6px;
+  letter-spacing: 10px;
+  opacity: 0.75;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.brand-tag{
+  margin-top: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.panel{
+  width: min(900px, 95%);
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 0 55px rgba(0,0,0,0.95);
+  padding: 18px;
+  position: relative;
+}
+
+.panel::before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid rgba(120,190,255,0.18);
+  pointer-events: none;
+}
+
+.panel-title{
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.panel-desc{
+  opacity: 0.75;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.ticket-card{
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.04);
+  padding: 16px;
+}
+
+.ticket-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  border-bottom: 1px solid var(--stroke);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.t-title{
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 3px;
+  font-size: 1.6rem;
+}
+
+.t-sub{
+  opacity: 0.75;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.t-code{
+  border: 1px solid var(--stroke2);
+  padding: 8px 10px;
+  letter-spacing: 3px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.ticket-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.t-field{
+  border: 1px solid var(--stroke);
+  padding: 10px;
+  background: rgba(0,0,0,0.35);
+}
+
+.t-label{
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.t-value{
+  letter-spacing: 1px;
+  opacity: 0.92;
+}
+
+.ticket-footer{
+  border-top: 1px solid var(--stroke);
+  margin-top: 12px;
+  padding-top: 10px;
+  opacity: 0.65;
+  font-size: 0.85rem;
+}
+
+.actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.btn-outline{
+  border: 1px solid var(--stroke);
+  background: transparent;
+  color: var(--white);
+  padding: 12px 12px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-family: "Special Elite", serif;
+}
+
+.btn-outline:hover{
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px){
+  .ticket-grid{ grid-template-columns: 1fr; }
+}
+
+/* Print clean */
+@media print{
+  .bg, .vignette, .brand, .actions { display: none !important; }
+  body{ background: #fff; color: #000; }
+  .panel{ box-shadow: none; border: none; background: #fff; }
+  .ticket-card, .t-field{ border: 1px solid #000; }
+  .t-code{ border: 1px solid #000; }
+}
